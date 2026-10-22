@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun Sayang! 🌿🌹</title>
+    
+    <!-- Tailwind CSS (Framework CSS) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans & Great Vibes untuk Aksen Romantis -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS Style & Rich Color Palette -->
+    <link rel="stylesheet" text="text/css" href="style.css">
+</head>
+<body class="min-h-screen relative flex flex-col justify-between">
+
+    <!-- Partikel Container (Diisi otomatis oleh JS) -->
+    <div id="particle-container" class="fixed inset-0 pointer-events-none z-10 overflow-hidden"></div>
+
+    <!-- Navigasi Bar Atas Mewah Bertema Matcha & Rose -->
+    <nav class="fixed top-0 left-0 w-full z-50 px-4 py-3 flex justify-between items-center bg-black/40 backdrop-blur-md border-b border-rose-500/30 shadow-lg">
+        <div class="flex items-center gap-2">
+            <span class="text-2xl animate-pulse">❤️</span>
+            <span class="font-serif font-bold text-amber-200 tracking-wider text-sm sm:text-base">Selamat Ya Sayanggkuuuuu</span>
+            <span class="text-xl">🌹</span>
+        </div>
+        <!-- Progress Indikator Halaman -->
+        <div class="flex items-center gap-2">
+            <span id="page-indicator" class="text-xs sm:text-sm font-semibold text-amber-200 bg-emerald-950/80 px-4 py-1.5 rounded-full border border-amber-300/40 shadow">
+                Halaman 1 / 7
+            </span>
+        </div>
+    </nav>
+
+    <!-- CONTAINER UTAMA HALAMAN (Multi Layer SPA) -->
+    <main class="flex-grow pt-24 pb-12 px-4 sm:px-6 max-w-5xl mx-auto w-full flex items-center justify-center">
+
+        <!-- ========================================== -->
+        <!-- HALAMAN 1: HERO & UCAPAN SELAMAT ULANG TAHUN -->
+        <!-- ========================================== -->
+        <section id="layer-1" class="layer-page active flex-col items-center justify-center text-center w-full min-h-[75vh]">
+            <div class="card-rose-luxury p-6 sm:p-10 rounded-3xl max-w-2xl w-full relative overflow-hidden animate-float">
+                <!-- Motif Hiasan Bunga Emas -->
+                <span class="absolute top-4 left-4 text-3xl">🌹</span>
+                <span class="absolute top-4 right-4 text-3xl">🌿</span>
+                <span class="absolute bottom-4 left-4 text-2xl">❤️</span>
+                <span class="absolute bottom-4 right-4 text-2xl">✨</span>
+
+                <!-- Slot Foto Utama Pasangan -->
+                <div class="relative w-44 h-44 sm:w-56 sm:h-56 mx-auto mb-6 rounded-full p-1.5 bg-gradient-to-tr from-amber-300 via-rose-400 to-emerald-400 shadow-2xl">
+                    <img id="img-halaman-1" 
+                         src="image/arumi.jpeg" 
+                         alt="Foto Pasangan" 
+                         class="w-full h-full object-cover rounded-full border-4 border-emerald-950">
+                    <div class="absolute bottom-1 right-1 bg-rose-600 text-amber-200 p-2.5 rounded-full shadow-xl border border-amber-300">
+                        <i class="fas fa-heart text-xl"></i>
+                    </div>
+                </div>
+
+                <p class="text-amber-300 font-semibold tracking-widest text-xs sm:text-sm uppercase mb-2">Happy Birthday My Love</p>
+                <h1 class="font-serif text-3xl sm:text-5xl font-extrabold text-white mb-4 leading-tight glow-text">
+                    Selamat Ulang Tahun, <br><span class="font-cursive text-amber-300 text-4xl sm:text-6xl font-normal">Sayangku, Cantikku!</span> ✨
+                </h1>
+                <p class="text-rose-100 text-sm sm:text-base leading-relaxed mb-8 max-w-lg mx-auto font-medium">
+                    Selamat ulang tahun sayang. Ada yang nambah umur nih jadi 17 tahun, selamat ya sayang, aku harap setelah kamu baca surat ini kamu bakal seneng hehe, maaf aku cuma bisa buat yang sesederhana ini.
+                </p>
+
+                <button onclick="changePage(2)" class="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-700 via-emerald-600 to-emerald-800 text-amber-200 border border-amber-300/50 px-8 py-3.5 rounded-full font-bold shadow-xl hover:shadow-emerald-900/60 hover:scale-105 transition-all duration-300 text-base">
+                    <span>Buka Surat</span> ✉️
+                </button>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- HALAMAN 2: PESAN / LETTER BOX VINTAGE MATCHA -->
+        <!-- ========================================== -->
+        <section id="layer-2" class="layer-page flex-col items-center justify-center w-full min-h-[75vh]">
+            <div class="card-matcha-letter p-6 sm:p-10 rounded-3xl max-w-2xl w-full relative">
+                <div class="flex items-center justify-between border-b border-amber-300/30 pb-4 mb-6">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-envelope-open-text text-3xl text-amber-300"></i>
+                        <h2 class="font-serif text-2xl font-bold text-amber-100">Surat Untuk Arumi yang Cantik</h2>
+                    </div>
+
+                </div>
+
+                <!-- Isi Pesan Cinta -->
+                <div class="space-y-4 text-emerald-100 leading-relaxed text-sm sm:text-base max-h-[48vh] overflow-y-auto pr-3 font-medium">
+                    <p class="font-serif text-xl italic text-amber-200">Halo Sayangku,</p>
+                    <p>
+                        Selamat bertambah usia sayangkuu cantikkuu arumikuu yangg lucuuu,semoga dengan bertambahnya umurmu kamu bisa jadi orang yang lebih baik lagii yaa. Semoga di permudah segala urusannya,di permudah rezekinya dan apa yang kamu inginkan tercapai semua, aamiinnnnnn...
+                    </p>
+                    <p>
+                        Terima kasih sudah tumbuh menjadi wanita yang luar biasa, kamu hebat dan kamu kuat, aku harap kamu bisa lebih kuat lagi menghadapi semua badai yang sudah menanti di depan, kita akan melewatinya bersama.
+                    </p>
+                    <p>
+                        Aku berharap di usia  kita yang sudah sama sama bertambah dewasa, kita bisa lebih serius lagi buat jalanin hubungan ini, kita akan melewati semuanya bersama sama. Aku cuma berharap kamu yang jadi istriku  nanti sampai aku mati bahkann sampai selamanya. Aku selalu ada di sisi kamu untuk mendukung dan menyayangi kamu.
+                    </p>
+                    <p>
+                        Maaf jika aku belum bisa menjadi laki laki yang sempurna buat kamu, maaf jika aku belum jadi yang terbaik di mata kamu, maaf jika masih banyak yang belum aku perbaiki dari aku menjadi seperti yang kamu mau, tapi percayalah aku sayanggg bangett sama kamuuu.
+                    </p>
+                    <p>
+                        Kamu itu orang yang special banget bagi aku, aku sayang banget sama kamu, aku harap kamu terus sama aku dan ga pernah ninggalin aku sampe kapanpun😥😥, jangan pernah tinggalin aku  ya sayang, setiap badai emang rasanya kayak susah buat di lewati, tapi kita harus tetep bareng buat ngelewati badai itu dan menyelesaikan semua badai yang datang. Sesulit apapun kita  jangan sampe putus ya, selalu inget janji  kita ya, pokoknya kalo  kita udah sama sama sukses harus nikah ya, awas aja nikah sama orang lain heumm... maaf ya sayang kalo aku masih sering egois, dan selalu kalah sama egoku, maaf belum bisa jadi cowo yang baik, maaf juga belum bisa jadi cowo kayak yang kamu mau, aku selalu berharap sama kamu sampe selamanya, sekali lagi maaf ya sayang kalo aku belum bisa jadi kebanggaanmu, aku ga pernah nyesel ketemu kamu, malah aku sangat bersyukur ketemu sama kamu di hidup yang singkat ini, kalo aku ngelakuin kesalahan ingetin ya jangan di biarin atau di marahin, tegur aku baik baik ya, dan maaf juga kalo aku ga pernah dengerin kamu hihihi, jangan  pernah bosen ngingetin aku ya, maaf juga selama ini aku terlalu mengekang kamu, karena aku sayang sama kamu hihihi... I ALWAYS LOVE YOU SAYANGKUUU❤️❤️❤️❤️❤️ AKU PENGEN KITA ABADI SAMPE SELAMANYA...
+                    </p>
+                    <p class="font-cursive text-3xl text-right text-amber-300 pt-4">
+                        Dengan seluruh cintaku,<br>
+                        — Kevvin Hariska Wijaya ❤️
+                    </p>
+                </div>
+
+                <div class="mt-8 flex justify-between items-center gap-4 pt-4 border-t border-emerald-500/30">
+                    <button onclick="changePage(1)" class="px-5 py-2.5 rounded-full border border-amber-300/50 text-amber-200 hover:bg-emerald-800/50 text-sm font-medium transition">
+                        ← Kembali
+                    </button>
+                    <button onclick="changePage(3)" class="bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 text-white border border-amber-200/40 px-6 py-2.5 rounded-full font-semibold text-sm shadow-lg transition">
+                        Halaman Selanjutnya →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- HALAMAN 3: PERTANYAAN INTERAKTIF 1 (EVASIVE BUTTON) -->
+        <!-- ========================================== -->
+        <section id="layer-3" class="layer-page flex-col items-center justify-center text-center w-full min-h-[75vh]">
+            <div class="card-rose-blush p-6 sm:p-10 rounded-3xl max-w-lg w-full relative">
+                <span class="text-xs font-bold text-amber-200 bg-rose-950/80 px-3 py-1 rounded-full border border-amber-300/30 uppercase tracking-wider">Tes Kejujuran #1</span>
+                
+                <!-- Foto Pembuat Web -->
+                <div class="w-36 h-36 mx-auto my-6 rounded-2xl overflow-hidden border-4 border-amber-300 shadow-2xl">
+                    <img id="img-pembuat" 
+                         src="image/kevvintampan.jpeg" 
+                         alt="Foto Pembuat Web" 
+                         class="w-full h-full object-cover">
+                </div>
+
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-3">
+                    Kamu sayang ga sama orang ganteng ini? 🥺
+                </h2>
+                <p class="text-rose-100 text-sm mb-8 font-medium">Jawab yang jujur yaa, gak boleh bohong! hihi~</p>
+
+                <!-- Area Tombol BERDAMPINGAN (Flexbox Layout) -->
+                <div class="relative min-h-[140px] w-full flex items-center justify-center gap-4 overflow-hidden p-4 rounded-2xl bg-black/20 border border-white/20" id="evasive-area-1">
+                    <!-- Tombol Sayang Banget (Tetap di Tempat) -->
+                    <button onclick="changePage(4)" class="bg-gradient-to-r from-emerald-600 to-emerald-800 hover:from-emerald-500 hover:to-emerald-700 text-amber-200 border border-amber-300/60 font-bold px-8 py-3.5 rounded-full shadow-xl hover:scale-105 transition-transform duration-200 z-10 text-base">
+                        Sayang Banget! ❤️
+                    </button>
+
+                    <!-- Tombol Tidak (Awalnya Berdampingan Rapi, Pindah Secara Dinamis Saat Dekat) -->
+                    <button id="btn-no-1" 
+                            onmouseenter="moveEvasiveButton('btn-no-1', 'evasive-area-1')" 
+                            onclick="moveEvasiveButton('btn-no-1', 'evasive-area-1')"
+                            ontouchstart="moveEvasiveButton('btn-no-1', 'evasive-area-1')"
+                            class="bg-rose-800/90 hover:bg-rose-900 text-rose-100 border border-rose-400/40 font-medium px-6 py-3 rounded-full shadow-lg transition-all duration-300 z-20">
+                        Gak / Tidak 😜
+                    </button>
+                </div>
+
+                <div class="mt-6 text-left">
+                    <button onclick="changePage(2)" class="text-xs text-amber-200/80 hover:underline">← Halaman sebelumnya</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- HALAMAN 4: GALERI KEBERSAMAAN (LANDSCAPE) -->
+        <!-- ========================================== -->
+        <section id="layer-4" class="layer-page flex-col items-center w-full min-h-[75vh]">
+            <div class="card-matcha-deep p-6 sm:p-8 rounded-3xl w-full">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-bold text-amber-200 bg-rose-900/80 px-3 py-1 rounded-full border border-amber-300/30 uppercase">Foto Foto Kita</span>
+                    <h2 class="font-serif text-3xl font-bold text-amber-100 mt-2 glow-text">dan Momen Indah Kita 🍃🌹</h2>
+                    <p class="text-emerald-200 text-sm mt-1">Sebenernya banyak lagi sih fotbarnya hehe</p>
+                </div>
+
+                <!-- Grid Foto Lanskap Sama Rata dengan Border Mawar & Emas -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                    <!-- Foto 1 -->
+                    <div class="rose-border overflow-hidden">
+                        <div class="h-48 sm:h-56 w-full overflow-hidden rounded-lg">
+                            <img src="image/WhatsApp Image 2026-09-05 at 13.20.30.jpeg" 
+                                alt="Kebersamaan 1" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <p class="text-center text-xs font-bold text-amber-200 mt-2"></p>
+                    </div>
+
+                    <!-- Foto 2 -->
+                    <div class="rose-border overflow-hidden">
+                        <div class="h-48 sm:h-56 w-full overflow-hidden rounded-lg">
+                            <img src="image/WhatsApp Image 2026-09-05 at 13.20.29.jpeg" 
+                                 alt="Kebersamaan 2" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <p class="text-center text-xs font-bold text-amber-200 mt-2"></p>
+                    </div>
+
+                    <!-- Foto 3 -->
+                    <div class="rose-border overflow-hidden">
+                        <div class="h-48 sm:h-56 w-full overflow-hidden rounded-lg">
+                            <img src="image/WhatsApp Image 2026-09-05 at 13.20.27.jpeg" 
+                                 alt="Kebersamaan 3" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <p class="text-center text-xs font-bold text-amber-200 mt-2"></p>
+                    </div>
+
+                    <!-- Foto 4 -->
+                    <div class="rose-border overflow-hidden">
+                        <div class="h-48 sm:h-56 w-full overflow-hidden rounded-lg">
+                            <img src="image/WhatsApp Image 2026-09-05 at 13.20.22.jpeg" 
+                                 alt="Kebersamaan 4" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <p class="text-center text-xs font-bold text-amber-200 mt-2"></p>
+                    </div>
+                </div>
+
+                <!-- Tombol Navigasi -->
+                <div class="mt-8 flex justify-between w-full">
+                    <button onclick="changePage(3)" class="px-5 py-2.5 rounded-full border border-amber-300/50 text-amber-200 bg-emerald-950/60 hover:bg-emerald-900 text-sm font-medium">
+                        ← Kembali
+                    </button>
+                    <button onclick="changePage(5)" class="bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 text-white border border-amber-300/40 px-6 py-2.5 rounded-full font-semibold text-sm shadow">
+                        Galeri Kenangan (10 Foto) →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- HALAMAN 5: GALERI 10 FOTO (BINGKAI MATCHA COKELAT) -->
+        <!-- ========================================== -->
+        <section id="layer-5" class="layer-page flex-col items-center w-full min-h-[75vh]">
+            <div class="card-ambient p-6 sm:p-8 rounded-3xl w-full">
+                <div class="text-center mb-6">
+                    <span class="text-xs font-bold text-amber-200 bg-emerald-950/80 px-3 py-1 rounded-full border border-amber-300/30 uppercase">Foto Arumi yang Cantik</span>
+                    <h2 class="font-serif text-3xl font-bold text-amber-100 mt-2 glow-text">Koleksi foto fotomu yang lucu dan cantik</h2>
+                    <p class="text-rose-100 text-sm">Fotonya si banyak ya di hp ku tapi webnya yang ga cukup hehe...</p>
+                </div>
+
+                <!-- Grid 10 Foto -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 w-full">
+                    <div class="matcha-chocolate-border">
+                        <img src="image/cipani.jpeg" class="w-full h-32 object-cover rounded-lg" alt="Kenangan 1">
+                    </div>
+                    <div class="matcha-chocolate-border">
+                        <img src="image/cipani2.jpeg" class="w-full h-32 object-cover rounded-lg" alt="Kenangan 2">
+                    </div>
+                    <div class="matcha-chocolate-border">
+                        <img src="image/cipani3.jpeg" class="w-full h-32 object-cover rounded-lg" alt="Kenangan 3">
+                    </div>
+                    <div class="matcha-chocolate-border">
+                        <img src="image/cipani4.jpeg" class="w-full h-32 object-cover rounded-lg" alt="Kenangan 4">
+                    </div>
+                    <div class="matcha-chocolate-border">
+                        <img src="image/cipani5.jpeg" class="w-full h-32 object-cover rounded-lg" alt="Kenangan 5">
+                    </div>
+                    <div class="matcha-chocolate-border">
+                        <img src="image/cipani6.jpeg" class="w-full h-32 object-cover rounded-lg" alt="Kenangan 6">
+                    </div>
+                    <div class="matcha-chocolate-border">
+                        <img src="image/cipani7.jpeg" class="w-full h-32 object-cover rounded-lg" alt="Kenangan 7">
+                    </div>
+                    <div class="matcha-chocolate-border">
+                        <img src="image/cipani8.jpeg" class="w-full h-32 object-cover rounded-lg" alt="Kenangan 8">
+                    </div>
+                    <div class="matcha-chocolate-border">
+                        <img src="image/cipani9.jpeg" class="w-full h-32 object-cover rounded-lg" alt="Kenangan 9">
+                    </div>
+                    <div class="matcha-chocolate-border">
+                        <img src="image/cipani10.jpeg" class="w-full h-32 object-cover rounded-lg" alt="Kenangan 10">
+                    </div>
+                </div>
+
+                <!-- Navigasi -->
+                <div class="mt-8 flex justify-between w-full">
+                    <button onclick="changePage(4)" class="px-5 py-2.5 rounded-full border border-amber-300/50 text-amber-200 bg-emerald-950/60 hover:bg-emerald-900 text-sm font-medium">
+                        ← Halaman 4
+                    </button>
+                    <button onclick="changePage(6)" class="bg-gradient-to-r from-emerald-600 to-emerald-800 hover:from-emerald-500 hover:to-emerald-700 text-amber-200 border border-amber-300/40 px-6 py-2.5 rounded-full font-semibold text-sm shadow">
+                        Lihat Perjalanan Kita →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- HALAMAN 6: TIMELINE PERJALANAN / OUR JOURNEY -->
+        <!-- ========================================== -->
+        <section id="layer-6" class="layer-page flex-col items-center w-full min-h-[75vh]">
+            <div class="w-full">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-bold text-amber-200 bg-rose-900/80 px-3 py-1 rounded-full border border-amber-300/30 uppercase">Kisah Asmara</span>
+                    <h2 class="font-serif text-3xl font-bold text-amber-100 mt-2 glow-text">Garis Waktu Perjalanan Kita ⏳💖</h2>
+                    <p class="text-emerald-200 text-sm">Coba scroll ke bawah buat  liat perjalanan kitakita.</p>
+                </div>
+
+                <!-- Timeline Container Vertikal -->
+                <div class="relative w-full max-w-2xl mx-auto timeline-line py-4">
+
+                    <!-- Timeline Item 1 (Matcha Card) -->
+                    <div class="relative mb-8 flex items-center justify-between w-full reveal">
+                        <div class="order-1 w-5/12 text-right pr-4">
+                            <div class="card-timeline-green p-4 rounded-2xl shadow-xl">
+                                <span class="text-xs font-bold text-amber-300">Awal Kenal</span>
+                                <h3 class="font-serif font-bold text-base text-white">12 Mei 2023</h3>
+                                <p class="text-xs text-emerald-100 mt-1">Awal mula aku ngechat karena suka, hihi~</p>
+                            </div>
+                        </div>
+                        <div class="z-20 flex items-center order-1 bg-amber-400 border-2 border-emerald-950 shadow-xl w-9 h-9 rounded-full justify-center text-emerald-950 font-bold text-xs">
+                            1
+                        </div>
+                        <div class="order-1 w-5/12 pl-4"></div>
+                    </div>
+
+                    <!-- Timeline Item 2 (Rose Card) -->
+                    <div class="relative mb-8 flex items-center justify-between w-full reveal">
+                        <div class="order-1 w-5/12 pr-4"></div>
+                        <div class="z-20 flex items-center order-1 bg-rose-500 border-2 border-amber-200 shadow-xl w-9 h-9 rounded-full justify-center text-white font-bold text-xs">
+                            2
+                        </div>
+                        <div class="order-1 w-5/12 text-left pl-4">
+                            <div class="card-timeline-rose p-4 rounded-2xl shadow-xl">
+                                <span class="text-xs font-bold text-amber-200">Fotbar Pertama</span>
+                                <h3 class="font-serif font-bold text-base text-white">9 Juni 2023</h3>
+                                <p class="text-xs text-rose-100 mt-1">Jujur gugup bangett waktu itu hehe~</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 (Matcha Card) -->
+                    <div class="relative mb-8 flex items-center justify-between w-full reveal">
+                        <div class="order-1 w-5/12 text-right pr-4">
+                            <div class="card-timeline-green p-4 rounded-2xl shadow-xl">
+                                <span class="text-xs font-bold text-amber-300">Jadian</span>
+                                <h3 class="font-serif font-bold text-base text-white">13 Juni 2023</h3>
+                                <p class="text-xs text-emerald-100 mt-1">Dan akhirnya statusnya jelas hehe~</p>
+                            </div>
+                        </div>
+                        <div class="z-20 flex items-center order-1 bg-amber-400 border-2 border-emerald-950 shadow-xl w-9 h-9 rounded-full justify-center text-emerald-950 font-bold text-xs">
+                            3
+                        </div>
+                        <div class="order-1 w-5/12 pl-4"></div>
+                    </div>
+
+                    <!-- Timeline Item 4 (Rose Card) -->
+                    <div class="relative mb-2 flex items-center justify-between w-full reveal">
+                        <div class="order-1 w-5/12 pr-4"></div>
+                        <div class="z-20 flex items-center order-1 bg-rose-500 border-2 border-amber-200 shadow-xl w-9 h-9 rounded-full justify-center text-white font-bold text-xs">
+                            4
+                        </div>
+                        <div class="order-1 w-5/12 text-left pl-4">
+                            <div class="card-timeline-rose p-4 rounded-2xl shadow-xl">
+                                <span class="text-xs font-bold text-amber-200">Putus</span>
+                                <h3 class="font-serif font-bold text-base text-white">21 Juni 2023</h3>
+                                <p class="text-xs text-rose-100 mt-1">Putus karena belum di restuin huhu~</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative mb-8 flex items-center justify-between w-full reveal">
+                        <div class="order-1 w-5/12 text-right pr-4">
+                            <div class="card-timeline-green p-4 rounded-2xl shadow-xl">
+                                <span class="text-xs font-bold text-amber-300">Akhirnya balikan lagi sampe di</span>
+                                <h3 class="font-serif font-bold text-base text-white">Ulang Tahunmu yang ke-3</h3>
+                                <p class="text-xs text-emerald-100 mt-1">Semoga kita selalu bareng sampe kapanpunnn hehe~btw lupa tanggal balikannya.</p>
+                            </div>
+                        </div>
+                        <div class="z-20 flex items-center order-1 bg-amber-400 border-2 border-emerald-950 shadow-xl w-9 h-9 rounded-full justify-center text-emerald-950 font-bold text-xs">
+                            5
+                        </div>
+                        <div class="order-1 w-5/12 pl-4"></div>
+                    </div>
+
+                </div>
+
+                <!-- Navigasi -->
+                <div class="mt-8 flex justify-between w-full">
+                    <button onclick="changePage(5)" class="px-5 py-2.5 rounded-full border border-amber-300/50 text-amber-200 bg-emerald-950/60 hover:bg-emerald-900 text-sm font-medium">
+                        ← Halaman 5
+                    </button>
+                    <button onclick="changePage(7)" class="bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 text-white border border-amber-300/40 px-6 py-2.5 rounded-full font-semibold text-sm shadow">
+                        Halaman Penutup →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- HALAMAN 7: PERTANYAAN FINAL & PENUTUP -->
+        <!-- ========================================== -->
+        <section id="layer-7" class="layer-page flex-col items-center justify-center text-center w-full min-h-[75vh]">
+            <div class="card-celebration p-6 sm:p-10 rounded-3xl max-w-xl w-full relative">
+                
+                <div id="final-question-container">
+                    <span class="text-4xl mb-2 inline-block animate-bounce">🌹</span>
+                    <h2 class="font-serif text-2xl sm:text-4xl font-extrabold text-amber-200 mb-4 glow-text">
+                        Pertanyaan Terakhir...
+                    </h2>
+                    <p class="text-rose-100 font-medium text-sm sm:text-base mb-8">
+                        Kamu sayang ga sama aku, dan apa kamu mau  terus sama aku sampe selamanya? 🥺✨
+                    </p>
+
+                    <!-- Area Tombol BERDAMPINGAN (Flexbox Layout) -->
+                    <div class="relative min-h-[140px] w-full flex items-center justify-center gap-4 overflow-hidden p-4 rounded-2xl bg-black/30 border border-amber-300/30" id="evasive-area-2">
+                        <!-- Tombol Ya / Selamanya (Tetap) -->
+                        <button onclick="showFinalCelebration()" class="bg-gradient-to-r from-rose-600 via-rose-500 to-rose-700 hover:from-rose-500 hover:to-rose-600 text-amber-100 border border-amber-300/60 font-bold px-8 py-3.5 rounded-full shadow-2xl hover:scale-105 transition-transform duration-200 z-10 text-base">
+                            Iya, Aku Mauuuu! ❤️✨
+                        </button>
+
+                        <!-- Tombol Tidak (Evasive Button) -->
+                        <button id="btn-no-2" 
+                                onmouseenter="moveEvasiveButton('btn-no-2', 'evasive-area-2')" 
+                                onclick="moveEvasiveButton('btn-no-2', 'evasive-area-2')"
+                                ontouchstart="moveEvasiveButton('btn-no-2', 'evasive-area-2')"
+                                class="bg-emerald-950/90 hover:bg-emerald-900 text-emerald-200 border border-emerald-500/40 font-medium px-6 py-3 rounded-full shadow-lg transition-all duration-300 z-20">
+                            Gak Mau 😜
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pesan Selebrasi Setelah Menekan "Iya, Selamanya!" -->
+                <div id="final-celebration-message" class="hidden space-y-6">
+                    <div class="text-6xl animate-bounce">🎉💖🍃🌹</div>
+                    <h2 class="font-serif text-3xl font-extrabold text-amber-200 glow-text">YAY!! I LOVE YOU SO MUCH! ❤️</h2>
+                    <p class="text-rose-100 text-sm sm:text-base leading-relaxed font-medium">
+                        Makasi ya udah mau nemenin aku sampe sekarang dan selamanya  hihi.
+                    </p>
+                    <div class="p-4 bg-emerald-950/80 rounded-2xl border border-amber-300/40 text-amber-200 text-xs sm:text-sm italic">
+                        "Setiap hari sama kamu adalah anugerah terbaik dalam hidupku."
+                    </div>
+                </div>
+
+                <!-- Tombol Kembali ke Awal -->
+                <div class="mt-8 pt-4 border-t border-amber-300/30">
+                    <button onclick="changePage(1)" class="inline-flex items-center gap-2 text-xs font-semibold text-amber-200 bg-emerald-900/80 hover:bg-emerald-800 border border-amber-300/40 px-5 py-2.5 rounded-full transition shadow">
+                        <i class="fas fa-rotate-left"></i> Kembali ke Halaman Awal
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Sederhana -->
+    <!-- <footer class="text-center py-4 text-xs text-amber-200/80 font-medium">
+        Dibuat dengan ❤️ & Matcha Rose Theme
+    </footer> -->
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script src="script.js"></script>
+</body>
+</html>
